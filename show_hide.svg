@@ -1,0 +1,35 @@
+		
+ 	<!--====================java scrit=================-->
+					<!--hide & show  images-->
+				nmouseover="show(evt, 'liver_image', 381, 262)"
+				onmouseout="hide(evt, 'liver_image')"
+					 
+				 <script type="text/ecmascript">
+				      <![CDATA[
+									function show(evt, node, width, height) {
+										var svgdoc = evt.target.ownerDocument;
+										var obj = svgdoc.getElementById(node);
+										obj.setAttribute("position", "relative");
+										obj.setAttribute("width", width);
+										obj.setAttribute("height", height);
+									}
+									function hide(evt, node) {
+										var svgdoc = evt.target.ownerDocument;
+										var obj = svgdoc.getElementById(node);
+										obj.setAttribute("width", "0");
+										obj.setAttribute("height", "0");
+										obj.setAttribute("position", "absolute");
+									}
+									]]>
+				</script>
+				
+ 	<!--====================svg scrit=================-->
+ 	     <image id="stomatch_image" style="opacity: 0; position: absolute;" overflow="visible" width="0" height="0"  xlink:href="stomatch-img.png""></image>
+			 <animate xlink:href="#stomatch_image"
+						  attributeName="opacity"
+					 	  values="0;1 " dur="0.5s" repeatCount="1"  fill="freeze"
+						  begin="stomatch_path.mouseover"  end="stomatch_path.mouseout"
+		  	/>
+				<!--hack to show hidden image -->
+				<animate xlink:href="#stomatch_image" attributeName="width"   dur="0" from="269" to="269" begin="stomatch_path.mouseover"	  end="stomatch_path.mouseout"></animate>
+				<animate xlink:href="#stomatch_image" attributeName="height"  dur="0" from="457" to="457" begin="stomatch_path.mouseover"	  end="stomatch_path.mouseout"></animate>
